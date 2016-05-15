@@ -6,12 +6,13 @@
   "scripts": {
     "rmrf": "rm -rf ./node_modules",
     "clean": "rm -rf ./dist",
-    "setup": "webpack",
-    "start": "",
+    "setup": "npm cache clear && npm run rmrf npm install",
+    "setup:dev": "npm run setup && npm run build:dev",
+    "start": "npm run clean && npm run build && node serve.prod.js",
     "start:dev": "node server.dev.js",
-    "start:prod": "",
-    "build": "",
-    "build:dev": "npm run clean && NODE_ENV=development webpack --config webpack.config.dev.js --display-error-details"
+    "build": "NODE_ENV=production /app/node_modules/.bin/webpack --config webpack.config.prod.js --display-error-details",
+    "build:dev": "npm run clean && NODE_ENV=development webpack --config webpack.config.dev.js --display-error-details",
+    "link:akkad": "npm link akkad"
   },
   "engines": {
     "node": "6.0.0"
