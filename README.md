@@ -7,4 +7,4 @@ $ npm run setup:dev
 $ npm run start:dev
 ```
 
-You should now be having a hot reload server on port 3032. 
+You should now have a hot reload server running on port 3032. 
